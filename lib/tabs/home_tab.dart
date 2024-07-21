@@ -17,6 +17,10 @@ class _HomeTabState extends State<HomeTab> {
     final screenWidth = mediaQuery.size.width;
     
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Vehicle App', style: GoogleFonts.josefinSans(fontSize: screenWidth * 0.06, fontWeight: FontWeight.bold, color: const Color.fromRGBO(2, 253, 253, 1))),
+        centerTitle: true,
+      ),
       body: Padding(
           // padding: const EdgeInsets.only(top: 16, left: 16,),
           padding: const EdgeInsets.all(16),

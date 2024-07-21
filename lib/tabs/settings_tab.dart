@@ -9,7 +9,8 @@ class SettingsTab extends StatefulWidget {
 }
 
 class _SettingsTabState extends State<SettingsTab> {
-  bool _switchValue = false;
+  bool _switchValue1 = false;
+  bool _switchValue2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +50,16 @@ class _SettingsTabState extends State<SettingsTab> {
               const Divider(),
           
               SwitchListTile(
+                thumbColor: const MaterialStatePropertyAll(Colors.white),
+                activeColor: const Color.fromRGBO(2, 253, 253, 1),
+                trackOutlineColor: const MaterialStatePropertyAll(Colors.white),
                 contentPadding: EdgeInsets.zero,
                 title: Text('Push Notifications', style: GoogleFonts.josefinSans(fontSize: screenWidth * 0.05, fontWeight: FontWeight.bold, color: Colors.black)),
                 subtitle: Text('Allow app to send notification on your device', style: GoogleFonts.josefinSans(fontSize: screenWidth * 0.035, color: Colors.grey[700])),
-                value: _switchValue, 
+                value: _switchValue1, 
                 onChanged: (newValue) { 
                   setState(() { 
-                    _switchValue = newValue; 
+                    _switchValue1 = newValue; 
                   }); 
                 }, 
               ),
@@ -63,21 +67,19 @@ class _SettingsTabState extends State<SettingsTab> {
               const Divider(),
           
               SwitchListTile( 
+                thumbColor: const MaterialStatePropertyAll(Colors.white),
+                activeColor: const Color.fromRGBO(2, 253, 253, 1),
+                trackOutlineColor: const MaterialStatePropertyAll(Colors.white),
                 contentPadding: EdgeInsets.zero,
                 title: Text('Email Notifications', style: GoogleFonts.josefinSans(fontSize: screenWidth * 0.05, fontWeight: FontWeight.bold, color: Colors.black)),
                 subtitle: Text('Allow app to send email notifications on your device', style: GoogleFonts.josefinSans(fontSize: screenWidth * 0.035, color: Colors.grey[700])),
-                value: _switchValue, 
+                value: _switchValue2, 
                 onChanged: (newValue) { 
                   setState(() { 
-                    _switchValue = newValue; 
+                    _switchValue2 = newValue; 
                   }); 
                 }, 
-              ), 
-          
-              // SwitchListTile.adaptive(
-              //   value: value, 
-              //   onChanged: onChanged
-              // )
+              ),
           
               SizedBox(height: screenHeight * 0.02,),
               Text('Support', style: GoogleFonts.josefinSans(fontSize: screenWidth * 0.06, fontWeight: FontWeight.bold, color: const Color.fromRGBO(2, 253, 253, 1))),
@@ -137,6 +139,8 @@ class _SettingsTabState extends State<SettingsTab> {
                   ),
                 ),
               ),
+
+              SizedBox(height: screenHeight * 0.02,),
             ],
           ),
         ),
